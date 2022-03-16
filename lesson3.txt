@@ -1,0 +1,111 @@
+import React from 'react';
+import ReactDom from 'react-dom';
+import './index.css';
+
+//Set up vars
+const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
+const firstBook = {
+  title: 'Ugly Love: A Novel',
+  author: 'Colleen Hoover',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/613KCs7szvL._AC_UL604_SR604,400_.jpg',
+  price: 'US$10.40'
+}
+
+const secondBook = {
+  title: 'How to Catch a Leprechaun',
+  author: 'Adam Wallace',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/81hSK0bkkFL._AC_UL604_SR604,400_.jpg',
+  price: 'US$7.43'
+}
+
+const thirdBook = {
+  title: 'Run, Rose, Run: A Novel',
+  author: 'James Patterson',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/81SQwBAtpWL._AC_UL604_SR604,400_.jpg',
+  price: 'US$18.00'
+}
+
+const fourthBook = {
+  title: 'Reminders of Him: A Novel',
+  author: 'Colleen Hoover',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/617uZq23IPL._AC_UL604_SR604,400_.jpg',
+  price: 'US$12.99'
+}
+
+const fifthBook = {
+  title: 'Verity',
+  author: 'Colleen Hoover',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/91cur7eZ85L._AC_UL604_SR604,400_.jpg',
+  price: 'US$11.26'
+}
+
+const sixthBook = {
+  title: 'Burn After Writing (Pink)',
+  author: 'Sharon Jones',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/612V9dt-NGS._AC_UL604_SR604,400_.jpg',
+  price: 'US$6.99'
+}
+
+function BookList(){
+  return (
+  <section className='booklist'>
+    <Book 
+    title={firstBook.title} 
+    author={firstBook.author} 
+    img={firstBook.img}
+    price={firstBook.price}>
+    {description}
+    </Book>
+    <Book 
+    title={secondBook.title} 
+    author={secondBook.author} 
+    img={secondBook.img}
+    price={secondBook.price}>
+    {description}
+    </Book>
+    <Book 
+    title={thirdBook.title} 
+    author={thirdBook.author} 
+    img={thirdBook.img}
+    price={thirdBook.price}>
+    {description}
+    </Book>
+    <Book 
+    title={fourthBook.title} 
+    author={fourthBook.author} 
+    img={fourthBook.img}
+    price={fourthBook.price}>
+    {description}
+    </Book>
+    <Book 
+    title={fifthBook.title} 
+    author={fifthBook.author} 
+    img={fifthBook.img}
+    price={fifthBook.price}>
+    {description}
+    </Book>
+    <Book 
+    title={sixthBook.title} 
+    author={sixthBook.author} 
+    img={sixthBook.img}
+    price={sixthBook.price}>
+    {description}
+    </Book>
+  </section>
+  );
+}
+
+//Book Component
+const Book = (props)=>{
+  const {title, author, img, price, children} = props;
+  return <article className='book'>
+    <img src={img} alt=""/>
+    <h1>{title}</h1>
+    <h4>{author}</h4>
+    <h3>{price}</h3>
+    <p>{children}</p>
+  </article>
+}
+
+ReactDom.render(<BookList/>,document.getElementById('root'));
