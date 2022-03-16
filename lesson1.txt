@@ -1,0 +1,39 @@
+import React from 'react'
+import ReactDom from 'react-dom'
+
+//With JSX
+function Greeting(){
+  return (
+  <div>
+    <Message1/>
+    <Message2/>
+  </div>
+  );
+}
+
+//Nested components, React Tools
+//const Message = ()=> <h1>Test</h1>
+const Message1 = ()=> <h1>Test</h1>
+const Message2 = ()=> {
+  return <h4>This is Carlos, this is my first component</h4>
+}
+
+
+//Without JSX
+/*const Greeting = () => {
+  return React.createElement(
+    'div',
+    {},
+    React.createElement('h4',{},'This is Carlos this is my first componet')
+  );
+}*/
+
+ReactDom.render(<Greeting/>,document.getElementById('root'));
+
+//JSX Rules
+//return single element
+//div/section/article or React.Fragment
+//use camelCase for html attributes exm: onClick
+//className instead of class
+//close every element
+//formatting
